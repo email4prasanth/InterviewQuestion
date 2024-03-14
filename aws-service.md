@@ -2,9 +2,9 @@
 - Six Advantages of Cloud Computing 
 - Types of Cloud Computing 
 - Cloud Computing Models 
--     - Infrastructure as a Service (IaaS) 
--     - Platform as a Service (PaaS) 
--     - Software as a Service (SaaS) 
+    - Infrastructure as a Service (IaaS) 
+    - Platform as a Service (PaaS) 
+    - Software as a Service (SaaS) 
 - Cloud Computing Deployment Models 
 -     - Cloud 
 -     - Hybrid 
