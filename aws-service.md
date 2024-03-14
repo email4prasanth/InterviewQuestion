@@ -6,14 +6,14 @@
     - Platform as a Service (PaaS) 
     - Software as a Service (SaaS) 
 - Cloud Computing Deployment Models 
--     - Cloud 
--     - Hybrid 
--     - On-premises 
+     - Cloud 
+     - Hybrid 
+     - On-premises 
 - Global Infrastructure 
 - Security and Compliance 
--     - Security 
--         -Benefits of AWS Security 
--     - Compliance 
+     - Security 
+         -Benefits of AWS Security 
+     - Compliance 
 - Amazon Web Services Cloud 
   - AWS Management Console 
   - AWS Command Line Interface 
