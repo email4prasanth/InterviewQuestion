@@ -1,0 +1,16 @@
+- What Is Cloud Computing
+- Six Advantages of Cloud Computing 
+- Types of Cloud Computing 
+- Cloud Computing Models 
+    - Infrastructure as a Service (IaaS) 
+    - Platform as a Service (PaaS) 
+    - Software as a Service (SaaS) 
+- Cloud Computing Deployment Models 
+     - Cloud 
+     - Hybrid 
+     - On-premises 
+- Global Infrastructure 
+- Security and Compliance 
+     - Security 
+         -Benefits of AWS Security 
+     - Compliance 
