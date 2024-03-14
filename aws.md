@@ -48,6 +48,11 @@ Based on demand automatically increasing or decreasing of resource (new instance
     - eclipse
 
 #### Amazon CloudWatch
+- **What is CloudWatch?**
+- The Amazon CloudWatch has the following features:
+
+    - Depending on multiple metrics, it participates in triggering alarms.
+    - Helps in monitoring the AWS environments like CPU utilization, EC2, Amazon RDS instances, Amazon SQS, S3, Load Balancer, SNS, etc.
 - **What services can be used to create a centralized logging solution?**
     - The essential services that you can use are Amazon CloudWatch Logs, store them in Amazon S3, and then use Amazon Elastic Search to visualize them. You can use Amazon Kinesis Firehose to move the data from Amazon S3 to Amazon ElasticSearch.
 - **How do you set up a system to monitor website metrics in real-time in AWS?**
@@ -74,3 +79,5 @@ Based on demand automatically increasing or decreasing of resource (new instance
     - VPC
 
 #### senario based
+
+
