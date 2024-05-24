@@ -1,4 +1,28 @@
 **DevOps Tools -packer, ansible, terraform, jenkins, docker, kubernetes, puppet, promethes, git, gitlab..**
+- What is difference between Cloud Engineer and DevOps Engineer
+    - Cloud Engineer is require for migrating Onpermises to Cloud platform and key resposibilites are
+        - Multi-tier cloud **Architecture Desigin**.
+        - **Migration plan** includes data transfer, app deloy and disaster plan setup. 
+        - Providing **Security** by controling the access of user, encrypting sensitive information
+        - Maintaining infrastructure IaaC (AWS - CloudFromation).
+        - **TrobuleShooting**
+        - **Monitoring**
+        - Skill
+            - AWS
+            - Cloud services - db, security, storage, networking
+            - IaaC - CloudFormation, Terraform.
+            - Security - 
+            - Monitoring Tools -
+    - DevOps Engineer is bridge b/w Developers and Operators to improve the application delivery
+   
+- **DevOps** is a process of improving the application delivery, it is culture of learning 
+```
+1. Automation
+2. Quality
+3. Monitoring
+4. Testing
+```
+
 
 - packer
     - Packer is a community tool for creating identical machine images for multiple platforms from a single source configuration. Packer is lightweight, runs on every major operating system
