@@ -1,9 +1,9 @@
-Operating Systems		   : Windows, UNIX and Linux
-Version Control System 	   : GIT 
-Continuous Integration	   : Jenkins
-Binary remote repository   : Artifactory
-Scripting			       : Shell, Python 
-Micro Services        	   : Docker & Kubernetes
-Configuration Management   : Ansible & Terraform
 Cloud Technologies         : Aws, Azure DevOps
+Version Control System 	   : GIT 
+Scripting			       : Shell, Python
+Containers :   Docker
+Orchestration :  Kubernetes
+Configuration Management : Ansible, Terraform
 Monitoring Tool            : CloudWatch, Promethus & Grafana
+Operating Systems		   : Windows, UNIX and Linux
+Continuous Integration	   : Jenkins
