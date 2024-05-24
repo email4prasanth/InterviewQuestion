@@ -57,3 +57,7 @@
     - `git stash list`- list of staged files
     - `git stash pop` - write working from top of stack
     - `git stash drop` - discard the changes form top of stack
+
+</h1> FQA </h1>
+
+What's the Difference Between Merge and Rebase?
