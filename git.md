@@ -60,4 +60,7 @@
 
 </h1> FQA </h1>
 
-What's the Difference Between Merge and Rebase?
+- What's the Difference Between Merge and Rebase?
+    - merge will combine changes in two branches, rebase will apply commit ahead of specific one.
+- What's the Difference Between Fetch and pull?
+- How do you resolve merge conflicts.
