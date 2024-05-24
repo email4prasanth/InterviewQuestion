@@ -4,10 +4,13 @@
 - Flow
     - Working DIR -- Staging Area -- Local Repo -- Remote Repo
     - ![](https://github.com/email4prasanth/InterviewQuestion/blob/master/Images/GIT.png)
-- Git- Distributed Version Control open source.
-- Github - Platform for hosting and coloborating on GIT repos.
+- Git- Distributed Version Control open source that can monitor, record the evolution of source code.
+- Github - Platform for online hosting and coloborating on GIT repos.
+- Git works by taking snapshots of project files and store everytime on commit.
 - Local - With in the a member of a team/employee side.
 - remote - Common repository that all team members exchange/perform opertions.
+
+
 - **SETUP/Configure tooling**
     - `git config --global user.name "[name]"`
         - git config --global user.name "email4prasanth"
@@ -61,7 +64,14 @@
 
 </h1> FQA </h1>
 
+- https://www.simplilearn.com/tutorials/git-tutorial/git-interview-questions
 - What's the Difference Between Merge and Rebase?
     - merge will combine changes in two branches, rebase will apply commit ahead of specific one.
 - What's the Difference Between Fetch and pull?
-- How do you resolve merge conflicts.
+    - Fetch download from remote to local repo
+    - Pull download from remote to working dir (pull = fetch+merge)
+- How do you resolve merge conflicts, how can we aviod   
+    - Editing the conflict code manually or using merge tools like KDiff3 that provides GUI
+    - Entirely not avoidable but can minimize with proper communication and pull before pushing.
+- How do you undo a commit that has already been pushed and made public?
+    - using `git revert commit` generates a fresh commit that revers the eairler version, however `git reset` is not recommneded in pubic domain
