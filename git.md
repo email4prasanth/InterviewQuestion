@@ -37,7 +37,23 @@
     - `git log branchB..bracnchA` - shows commit on branchA that are not in branchB.
     - `git diff branchB...branchA` - show difference on branchA that are not in branchB.
     - `git log --flow [file]` - shows version history for file and also rename history.
+    - `git show [commit]` - shows metadata of the given commit.
 - **TRACKING PATH CHANGES**
     - `git rm [file]`
     - `git mv  [existing-path] [new-path]` 
     - `git log --stat -M` - show all commit logs with indication of any path that moved.
+- **Synchronize changes/Updates**
+    - `git fetch` - Download files from remote repo to local repo
+    - `git merge` - combines remote branch to local branch
+    - `git pull` - fetch+merge, Download files from remote repot to working dir
+    - `git push [alias] [branch]` - Upload files from local repo to remote repo
+    - 
+- **REWRITE HISTORY**
+    - `git rebase [branch]` - apply any commits of current branch to ahead of specific one
+        - https://www.youtube.com/watch?v=0chZFIZLR_0
+    - `git reset --hard [commit]` - clear stagging area, rewrite from specific commit
+- **TEMPORARY COMMITS**
+    - `git stash` - save modified and stage
+    - `git stash list`- list of staged files
+    - `git stash pop` - write working from top of stack
+    - `git stash drop` - discard the changes form top of stack
