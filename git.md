@@ -3,8 +3,15 @@
 - Github - Platform for hosting and coloborating on GIT repos.
 - Local - With in the a member of a team/employee side.
 - remote - Common repository that all team members exchange/perform opertions.
-- SETUP/Configure tooling
+- SETUP/Configure tooling:
     - git config --global user.name "[name]"
         - git config --global user.name "email4prasanth"
     - git config --global email.name "[email]"
         - git config --global user.email "email4prasanth@gmail.com"
+    - git config --golbal list
+- Create repositories
+    - git init - turns existing directory into a git repository
+    - git clone [url] - Download the existing repository available on github.
+        - git clone https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/podautoscaler
+        - It is recommned to clone by creating an empty folder.
+- BRANCH & MERG
