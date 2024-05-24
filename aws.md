@@ -23,7 +23,12 @@
     - CloudFront
 
 #### EC2
+- Using VPC a specified IP address can an EC2 instance can launch.
 
+- **Define Amazon EC2 regions and availability zones?**
+    - AR conatins one or mor AZ (geographical location), failure in one zone wont effect the on EC2 instances
+- **Explain Amazon EC2 root device volume?**
+    - Using AMI a new EC2 instance can launch, Image is used to boot an EC2 instance is stored on the root device drive. This device volume is suppourted by EBS or instance store, this will not effected by the lifespan of EC2 instance.
 
 #### AutoScaling
 - **What is auto-scaling?**
@@ -47,6 +52,7 @@ Based on demand automatically increasing or decreasing of resource (new instance
     - aws cdk
     - eclipse
 
+
 #### Amazon CloudWatch
 - **What is CloudWatch?**
 - The Amazon CloudWatch has the following features:
@@ -63,6 +69,9 @@ Based on demand automatically increasing or decreasing of resource (new instance
     - AWS API calls
     - Console sign-in events
 
+#### RDS
+- **Will your standby RDS be launched in the same availability zone as your primary?**
+    - NO, stanby instance lauch in different AZ. If the primary instance fails, the back up instance will assits in recovering all the data.
 
 #### Security
 - **What are the native AWS Security logging capabilities?**
@@ -78,6 +87,23 @@ Based on demand automatically increasing or decreasing of resource (new instance
     - ELB
     - VPC
 
-#### senario based
+#### Media Services
+- **What is an Elastic Transcoder?**
+    - To support multiple devices with various resolutions like laptops, tablets, and smartphones, we need to change the resolution and format of the video. This can be done easily by an AWS Service tool called the Elastic Transcoder
 
+#### RDS - Relational Database Service
+#### Snapshots
+- **Define Snapshots in Amazon Lightsail?**
+    - Resource can be restored using snapshots. Snapshots is backups of EC2 instances, block storage drives, databases done manually or automatically. 
 
+#### Senario Based Questions
+- **What is the difference between a Spot Instance, an On-demand Instance, and a Reserved Instance?**
+    - Spot Instance - unused instance that user can use at reduced cost
+    - Ondemand Instance - pay for computing resource without making longterm obligations.
+    - Reserved Instance - allow you to specify attribute (AZ, AR, Instance type, platform, tenancy).
+- **On an EC2 instance, an application of yours is active. Once the CPU usage on your instance hits 80%, you must reduce the load on it. What strategy do you use to complete the task?**
+    - AutoScaling group is used to deploy additional instance when ever the desired upper threshold hits,
+- **Multiple Linux Amazon EC2 instances running a web application for a firm are being used, and data is being stored on Amazon EBS volumes. The business is searching for a way to provide storage that complies with atomicity, consistency, isolation, and durability while also increasing the application's resilience in the event of a breakdown (ACID). What steps should a solutions architect take to fulfill these demands?**
+    - AWS Auto Scaling groups can create an application load balancer that spans many availability zones. Mount a target on each instance and save data on Amazon EFS (Amazon Elastic File System).
+- **Your business prefers to use its email address and domain to send and receive compliance emails. What service do you recommend to implement it easily and budget-friendly?**
+    - Amazon Simple Email Service (Amazon SES), a cloud-based email-sending service, which allows you to send bulk emails to customers swiftly at a minimal cost.

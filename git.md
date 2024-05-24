@@ -1,0 +1,10 @@
+- Remote branch & Local Branch
+- Git- Distributed Version Control open source.
+- Github - Platform for hosting and coloborating on GIT repos.
+- Local - With in the a member of a team/employee side.
+- remote - Common repository that all team members exchange/perform opertions.
+- SETUP/Configure tooling
+    - git config --global user.name "[name]"
+        - git config --global user.name "email4prasanth"
+    - git config --global email.name "[email]"
+        - git config --global user.email "email4prasanth@gmail.com"

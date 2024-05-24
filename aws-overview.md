@@ -1,16 +1,41 @@
 - What Is Cloud Computing
+    - Cloud Computing is on-demand delivery of compute, storage, applications, databases and other IT resources through a cloud service platform via the internet with pay-as-you-go pricing.
 - Six Advantages of Cloud Computing 
+    - Go global in minutes
+    - Increase speed and agility
+    - Stop guessing capacity
+    - Benfit of massive economies of scale
+    - Minimzing capital expenses
+    - Pay when you consume.
+- What are the five characteristics of cloud computing (MRBRO)
+    - Measured Service
+    - Rapid Elasticity
+    - Broad network access
+    - Resource Pooling
+    - On-demand self service
 - Types of Cloud Computing 
 - Cloud Computing Models 
     - Infrastructure as a Service (IaaS) 
+        - Basic building blocks for cloud IT and typically provide access to Networking, computing, storage.
+        - Exisiting IT departments are familar as IaaS provides highest level of flexibility and management control over IT resources.
     - Platform as a Service (PaaS) 
+        - Infrastructure is readily available allows you to focus on develop, testing, deployment and management of your application.
     - Software as a Service (SaaS) 
-- Cloud Computing Deployment Models 
-     - Cloud 
-     - Hybrid 
+        - Infrastructuer is readily availabe and service is maintaining by others.
+        - End-user application you can focus on how to use the piece of software.
+- [Cloud Computing Deployment Models](https://www.youtube.com/watch?v=m1jGn4Iejwk)
+     - Public Cloud 
+        - Cloud service provide over public internet available to **anyone** who wants to use.
+        - Example: Amazon Virtual Private Cloud (VPC), Azure Virtual Network (VNet), Google Virtual Private Cloud (VPC) 
+     - Private cloud
+        - Cloud service hosting within a private network infrastructure (on-premises or off-premises) used by **single organisation** and offer greater control, security and customizaton
+        - Example: AWS Outposts, Azure Stack, Anthos.
+     - Hybrid Cloud 
+        - Combination of both public and private cloud models. It allows organizations to use a mix of on-premises, private cloud, and public cloud services, integrating them seamlessly to meet specific business needs. 
      - On-premises 
-- Global Infrastructure 
-- Security and Compliance 
-     - Security 
-         -Benefits of AWS Security 
-     - Compliance 
+        - Cloud Created to our own business 
+        - Computing resources that are deployed and managed within an organization's own data center or infrastructure.
+     - Multi Cloud
+        - Multiple cloud computing services from different cloud providers
+        -  Offer redundancy, risk mitigation, and the ability to choose the best-of-breed services from different providers.
+- ![Cloud models](https://github.com/email4prasanth/Kubernetes/blob/master/Images/k8s.png)

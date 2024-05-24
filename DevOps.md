@@ -11,3 +11,9 @@
 
 - jenkins
     - An open-source automation server that helps with continuous integration and delivery (CI/CD). Jenkins is used for building apps, testing builds, and integrating changes quickly.
+
+- Monitoring Tools- https://www.tigera.io/learn/guides/kubernetes-monitoring/kubernetes-monitoring-tools/
+    - Kubernetes Dashboard
+    - Prometheus
+    - cAdvisor
+    - Elastic Stack (ELK)

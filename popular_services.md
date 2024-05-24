@@ -87,8 +87,8 @@ click on  - [source](https://d1.awsstatic.com/whitepapers/aws-overview.pdf)
   - AWS Shield 
   - AWS WAF
 - Storage  
-  - Amazon Elastic Block Store 
-  - Amazon Elastic File System 
-  - Amazon Simple Storage Service 
+  - Amazon Elastic Block Store (EBS)
+  - Amazon Elastic File System (EFS)
+  - Amazon Simple Storage Service (S3)
   - Amazon S3 Glacier 
   - AWS Backup 
