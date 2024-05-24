@@ -3,6 +3,7 @@
 
 - Flow
     - Working DIR -- Staging Area -- Local Repo -- Remote Repo
+    - ![](https://github.com/email4prasanth/InterviewQuestion/blob/master/Images/GIT.png)
 - Git- Distributed Version Control open source.
 - Github - Platform for hosting and coloborating on GIT repos.
 - Local - With in the a member of a team/employee side.
