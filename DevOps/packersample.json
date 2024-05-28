@@ -6,6 +6,7 @@
   "provisioners":[{}]
 }
 
+// variable sytax
 {
     "_comment": "This is variable sytax",    
     "variables":{
