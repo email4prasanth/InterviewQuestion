@@ -3,30 +3,49 @@
   "_comment": "This is a comment",
   "variables":{},
   "builders": [{}],
-  "provisioners":[{}]
+  "provisioners":[{}],
+  "post-processors": [{}]
 }
 
-// variable sytax
+
 {
     "_comment": "This is variable sytax",    
     "variables":{
       "aws_access_key": "",
       "aws_secret_key": "",
       "region": ""
-    }
-}
-    
-// builder syntax:
-{
+    },
     "builders": [
     {
-        "_comment": "Decleared in varaibles section",
+        // Decleared in varaibles section
         "access_key": "{{user `aws_access_key`}}",
         "secret_key": "{{user `aws_secret_key`}}",
         "region": "{{user `region `}}",
-        "_comment": "Directly assigning",
+        //  Directly assigning"
         "type": "amazon-ebs",
         "ssh_username": "ubuntu",
         "associate_public_ip_address": true
+    }],
+    "provisioners":[
+        // using shell script .sh
+        {
+            "type": "shell",
+            "script": "script.sh"
+        },
+        // using bash commands
+        {
+            "type": "shell",
+            "inline": []
+        },
+        // using file
+        {
+            "type": "file",
+            "source":"",
+            "Destination": ""
+    }],
+    "post-processors": [
+        {
+            "type": "compress",
+            "format": "tar.gz"
     }]
 }
