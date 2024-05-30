@@ -1,0 +1,4 @@
+- **Terraform** is an infrastructure-as-code tool that provisions and manages infrastructure resources. Terraform is used to codify infrastructure.
+- It will perform on 
+    - Existing Resource can be access by data "type" "name" {}
+    - Creating new resource by using resource "type" "name" {}

@@ -1,3 +1,4 @@
+- **Packer** is a community tool for creating identical machine images for multiple platforms from a single source configuration.
 - Packer is used to create AMI (Amazon Machine Image) which is a static Artifacts
     - Build - It is a single task that produces artifacts
     - Artifacts - This is result of a single build, Every builder produces artifacts.
@@ -7,4 +8,5 @@
     - post-processor - create a new arifacts.
     - Template - (hcl or json) packer able to read template and create multiple machines paralelly.
 - https://developer.hashicorp.com/packer/docs/templates/legacy_json_templates/user-variables
+
 
