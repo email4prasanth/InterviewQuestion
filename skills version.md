@@ -1,5 +1,5 @@
 | Skill | software name| Last used | Experience | Latest released in |
-| :---        |    :----:   | :---        | 
+| :---        |    :----:   | :---        | :---        | :---        | 
 |Jenkins CI | 2.414.1 | 2024 | 3 | 2023-08-23|
 |Terraform | 1.5.0 | 2024 | 3 | June 12, 2023|
 |Kubernetes| 1.28 | 2024 | 1| August 15, 2023|
