@@ -6,6 +6,6 @@
 |Grafana | 9.4 | 2024 | 1 | 9.4.17 (11 Oct 2023)|
 |Prometheus | 2.37.8| 2024 |1| 2023-05-04|
 |Docker | 23.0.6| 2024 |3|2023-05-08|
-|python | 3.12 | 4| 2024 | |
-|shell scripting| | 4|2024 | |
-|AWS services|  | 3|2024 | |
+|python | 3.12 | 2024 | 4| |
+|shell scripting| |2024 | 4| | 
+|AWS services|  |2024 | 3| |
