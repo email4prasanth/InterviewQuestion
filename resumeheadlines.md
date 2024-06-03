@@ -1,0 +1,1 @@
+ DevOps Engineer with over four years of hands-on experience, I specialize in automating, monitoring, and optimizing the deployment and maintenance of software applications, with a proven track record in CI/CD pipeline management.

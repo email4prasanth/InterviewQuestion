@@ -1,3 +1,11 @@
-| Skill / software name| Last used | Experience |
+| Skill | software name| Last used | Experience | Latest released in |
 | :---        |    :----:   | :---        | 
-|Jenkins CI | 2.414.1 | 2024 | 3 |
+|Jenkins CI | 2.414.1 | 2024 | 3 | 2023-08-23|
+|Terraform | 1.5.0 | 2024 | 3 | June 12, 2023|
+|Kubernetes| 1.28 | 2024 | 1| August 15, 2023|
+|Grafana | 9.4 | 2024 | 1 | 9.4.17 (11 Oct 2023)|
+|Prometheus | 2.37.8| 2024 |1| 2023-05-04|
+|Docker | 23.0.6| 2024 |3|2023-05-08|
+|python | 3.12 | 4| 2024 | |
+|shell scripting| | 4|2024 | |
+|AWS services|  | 3|2024 | |

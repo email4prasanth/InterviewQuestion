@@ -9,7 +9,7 @@
 - Well-versed in Prometheus and Grafana for effective monitoring and alerting.
 - Experience in working with AWS and Azure DevOps, Creating resource groups and configuring app services, storage accounts, containers, and VPCs via Terraform scripts.
 - Configuring build & release pipelines in Azure DevOps to deploy the packages in dev, qa, uat, and prod environments. 
-
+- Perform administrative processes for cloud systems, including installation, backup, security, array management,software patching.
 
 
 
