@@ -16,3 +16,19 @@
     - Advanced Automation: Continue to deepen my expertise in automation tools and practices, aiming to eliminate manual processes and further streamline DevOps workflows.
     - Leadership and Mentorship: Transition into more senior roles where I can lead larger teams, drive strategic initiatives, and mentor upcoming DevOps professionals.
 
+
+Over the past four years, I have successfully implemented and managed (CI/CD) pipelines using tools such as Jenkins, Azure DevOps. My Career Highlights are
+- Proven Expertise in Automation and CI/CD Pipelines.
+- Cloud Infrastructure Management.
+- Containerization and Orchestration.
+- Collaboration and Leadership.
+By using Industry best practices I achieved
+- Reduced Deployment Times by 50%
+- Achieved a 30% reduction costs by optimizing resource.
+- Maintained 95% uptime for critical applications through effective monitoring.
+- Hashicorp vault is used to enhance security. 
+I want see my self as a
+- - Develop advanced skills in scripting languages (Python) and automation tools.
+- Gain proficiency in managing and optimizing multi-cloud environments to provide flexibility.
+- Integrate security practices into the DevOps pipeline (DevSecOps) to ensure continuous security monitoring and compliance.
+- Explore the integration of AI and machine learning into DevOps processes to enable predictive.
