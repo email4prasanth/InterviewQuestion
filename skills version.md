@@ -9,3 +9,5 @@
 |python | 3.12 | 2024 | 4| |
 |shell scripting| |2024 | 4| | 
 |AWS services|  |2024 | 3| |
+|Ansible | 2.15| 2024 |3 | |
+| | | | | |
