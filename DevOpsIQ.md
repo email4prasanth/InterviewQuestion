@@ -87,3 +87,12 @@
     
 8. What is your day to day activity?
 
+- Terrafrom, Docker,  DevOps, jenkins, CI/CD, Kubernetes, 
+- How do you implement DevOps in you project (5m)
+- What is your branching strategy 
+- How do you work with developers and merge the code how it is going from development to production
+- Write an ansible playbook, doker file, shell script, resource creation using terrafrom.
+- Stages in pipeline
+- how you are providing dev to prod automatically.
+- Is there any Diaster recovery 
+

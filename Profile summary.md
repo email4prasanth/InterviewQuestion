@@ -10,7 +10,7 @@
 - Key Achievements:
     - Reduced Deployment Times: Successfully decreased deployment times by 50% through the implementation of automated CI/CD pipelines.
     - Cost Savings: Achieved a 30% reduction in cloud infrastructure costs by optimizing resource usage and implementing cost-effective solutions.
-    - High Availability: Maintained 95% uptime for critical applications through effective monitoring, automation, and incident management practices.
+    - High Availability: Maintained 98% uptime for critical applications through effective monitoring, automation, and incident management practices.
     - Security Enhancements: Enhanced security postures by implementing best practices in cloud security, continuous security testing, and compliance monitoring.
 - Career Goals:
     - Advanced Automation: Continue to deepen my expertise in automation tools and practices, aiming to eliminate manual processes and further streamline DevOps workflows.
