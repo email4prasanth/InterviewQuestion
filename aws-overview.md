@@ -24,14 +24,14 @@
         - Infrastructuer is readily availabe and service is maintaining by others.
         - End-user application you can focus on how to use the piece of software.
 - [Cloud Computing Deployment Models](https://www.youtube.com/watch?v=m1jGn4Iejwk)
-     - Public Cloud 
+     - Public Cloud
         - Cloud service provide over public internet available to **anyone** who wants to use.
         - Example: Amazon Virtual Private Cloud (VPC), Azure Virtual Network (VNet), Google Virtual Private Cloud (VPC) 
      - Private cloud
         - Cloud service hosting within a private network infrastructure (on-premises or off-premises) used by **single organisation** and offer greater control, security and customizaton
         - Example: AWS Outposts, Azure Stack, Anthos.
      - Hybrid Cloud 
-        - Combination of both public and private cloud models. It allows organizations to use a mix of on-premises, private cloud, and public cloud services, integrating them seamlessly to meet specific business needs. 
+        - Combination of both public and private cloud models. It allows organizations to use a mix of on-premises, private cloud, and public cloud services, integrating them seamlessly to meet specific business needs.
      - On-premises 
         - Cloud Created to our own business 
         - Computing resources that are deployed and managed within an organization's own data center or infrastructure.

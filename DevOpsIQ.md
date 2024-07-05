@@ -61,7 +61,7 @@ Committed to continuous learning and improvement in the field of information tec
 
 Thank you for taking the time to learn about my background and skills as a DevOps engineer.
 ```
-
+- Continious Delivery require manual approval before deploying into production. Continous Deployment directly deploys in production.
 1. Explain your current CI/CD setup 
 - Currently we are using Jenkins for continious integration and continious deployment. we use Github as soucre code repository, we configured git hub webhook that will trigger the jenkins pipeline (Orchestrater) for every commit. The source is GITHUB and the target platform is kubernetes. 
   - Continious Integration
@@ -270,7 +270,6 @@ Thank you for taking the time to learn about my background and skills as a DevOp
 - how you are providing dev to prod automatically.
 13. Is there any Diaster recovery 
 Yes, disaster recovery (DR) is a critical aspect of our DevOps strategy to ensure business continuity and minimize downtime in case of unexpected failures. Our disaster recovery plan includes several key components and practices:
-
 1. Data Backups:
  - Regular Backups: We perform regular backups of critical data, including databases and application configurations. These backups are automated and scheduled to run daily.
  - Offsite Storage: Backups are stored in multiple locations, including offsite storage and cloud storage solutions like AWS S3 or Azure Blob Storage, to protect against site-specific failures.
@@ -295,3 +294,6 @@ Yes, disaster recovery (DR) is a critical aspect of our DevOps strategy to ensur
 - Summary
 Our disaster recovery plan is designed to provide a robust framework for handling unexpected failures and ensuring business continuity. By leveraging automated backups, infrastructure as code, high availability architectures, regular testing, and comprehensive monitoring, we can quickly and efficiently recover from disasters with minimal impact on our operations.
 
+#### Monolithic and Microservice
+- Monolithic Architecture, the all components of application is tightly bounded and all the component code should write in same language if any component require updation we need to deploy the entire application. Ex: Finacial service like Banking
+- Microservice Architecture, the component of applications are autonomous, each component can code with different language, any update in a component can achieve by deploying the service alone not the entire application. Ex: Swiggy

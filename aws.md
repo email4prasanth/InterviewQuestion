@@ -107,3 +107,5 @@ Based on demand automatically increasing or decreasing of resource (new instance
     - AWS Auto Scaling groups can create an application load balancer that spans many availability zones. Mount a target on each instance and save data on Amazon EFS (Amazon Elastic File System).
 - **Your business prefers to use its email address and domain to send and receive compliance emails. What service do you recommend to implement it easily and budget-friendly?**
     - Amazon Simple Email Service (Amazon SES), a cloud-based email-sending service, which allows you to send bulk emails to customers swiftly at a minimal cost.
+- what is Burstable and non burstable instance.
+    - The base price of burstable instance is 15% cheaper than non-burstable, with burstable instance cpu utilization limits:30% for t3.large 
