@@ -1,0 +1,13 @@
+---
+- name: PUSH TO GIT
+  hosts: ansible-admin
+  gather_facts: no
+  become: yes
+  become_user: root
+  tasks:
+    - name: RUN APT UPDATE
+      shell: apt update
+    - name: GIT intialization to remote
+      apt: >
+      name= git
+      state= present

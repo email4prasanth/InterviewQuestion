@@ -1,0 +1,12 @@
+---
+- name: Push to GIT
+  hosts: ansible-admin
+  become: yes
+  gather_facts: no
+  tasks: 
+  - name: 
+    shell: aptupdate
+  - name:
+    apt: >
+      name=
+      status= 
