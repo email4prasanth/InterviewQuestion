@@ -1,0 +1,91 @@
+trigger:
+  - master
+  - development
+pool:
+  - vmImage: ubuntu-latest
+  - name: LinuxAgent
+    demands:
+      - AWS -equals YES
+variables:
+  global_version: "1.2.3"
+  global_email: ""
+stages:
+  - stage: BuildJavaCode
+    variables:
+      stage_version: ''
+      stage_email: ''
+    - jobs:
+      - job:
+        - scripts:
+          $(Build.BuildId)
+          ls -al && chmod 700 build.sh && sudo bash ./build.sh
+          mv ROOT.war $ROOT(Build.BuildId).war
+          cp $ROOT(Build.BuildId).war /artifacts
+          displayname:
+        - steps:
+        - task: CopyFiles@2
+          inputs:
+            content: $(Build.BuildId).war
+            TargetFolder: $(ArtifactStaggingDirectory)
+            Overwrite: true
+          displayName:
+        - task: PublishBuildArtifacts@1
+          inputs:
+            PulbishPath: $(ArtifactStaggingDirectory)
+            ArtifactName: $(Build.BuildId).war
+            PublishLocation: "container"
+  - stage: PublishArtifatsToS3
+    - jobs:
+      - job: Upload files to S3 Bucket
+        - task: S3Upload@1
+          inputs: 
+            awsCredentials: 'devops-aws-connection'
+            regionName: 'devops-aws-region'
+            BucketName: 'alphaado'
+            source: /artifacts
+            globalExpression: $(Build.BuildId).war
+  - stage: BulildDockerImageandPushToECR
+    - jobs:
+      - job: BuildDockerImage
+        timeoutInMinute: 10
+        - task: Docker@2
+          inputs:
+            containerRegistry: 'devops-dockerhub-connection'
+            repository: 'dkutti/ado'
+            command: 'BuildAndPublish'
+            dockerfile: '**/Dockerfile'
+          diplayName:
+        continueOnError: true
+      - job: PushImageToECR
+        - task: PushToECR@1
+          inputs:
+            awsCredentials: 'devops-aws-creds'
+            regionName: 'devops-aws-region'
+            sourceimage: 'imagename'
+            ImageSourceName: 'AWS_IMAGE-URI'
+            sourceImageTag: $(Build.BuildId)
+            PushTag: $(Build.BuildId)
+            repoName: 'AWS_IMAGE_REPO'
+
+  - stage: DeployToECSFargate
+    - jobs:
+      - job:
+        timeoutInMinutes: 10
+        steps:
+          - checkout: none
+          - task: bash@3
+            inputs:
+              targetType: inline
+              awsCredentials: 'devops-aws-connection'
+              scripts: |
+                aws ecs update-service --cluster <> --service <> --desired-count-2 --task-definition <> --force-new-deployment --region
+              displayName:
+
+  - stage: DeployToDevelopmentEnvironment
+  - stage: DeployToProductionEnvironment
+  - stage: DeleteRepo
+    - jobs:
+      - job:
+        - scripts: cd /home/ansible_admin/_work/1/s && rm -rf src
+          scripts: cd /artifacts && rm -rf **.war
+

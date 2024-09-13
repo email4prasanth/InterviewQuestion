@@ -1,0 +1,89 @@
+trigger:
+  - master
+  - develop
+pool:
+  - vmImage: ubuntu-latest
+  - name: LinuxAgent
+    demands:
+      - AWS -equals YES
+variables:
+  - global_version: '1.2.0'
+    global_email: ''
+stages:
+  - stage: DevelopJavaCode
+    - varibales:
+      - stage_version: ''
+        stage_email: ''
+    - jobs:
+      - job:
+        - timeoutInMinutes: 10
+        - steps:
+          - scripts: 
+            echo "$(Build.BuildId)""
+            ls -al
+            chmod 700 build.sh && sudo bash ./build.sh
+            mv ROOT.war ROOT$(Build.BuildId).war
+            cp ROOT$(Build.BuildId).war /artifacts
+            displayName:
+          - task: CopyFiles@2
+            inputs:
+              content: ROOT$(Build.BuildId).war
+              TargetFolder: $(Build.ArtifactStaggingDirectory)
+              Overwrite: true
+            displayName:
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PublishPath: $(Build.ArtifactStaggingDirectory)
+              ArtifactName: $(Build.BuildId).war
+              PublishLocation: 'container'
+            displayName:
+  - stage: CopyingArtifactsToAWS
+    - jobs:
+      - job: CopyingArtifactsToS3Bucket
+        timeoutInMinutes: 10
+        checkout: none
+        - steps:
+          - task: S3Upload@2
+            inputs:
+              awsCredentials: 'devop-aws-creds'
+              regionName: 'devops-aws-region'
+              BucketName: 'aplhaArtifacts'
+              source: '/artifacts'
+              globalExpression: 'ROOT$(Build.BuildId).war'
+            displayName: 
+  - stage: BuildDockerImageandPushToECR
+    - jobs:
+      - job: BuildDockerImageandPushToDockerHub
+        timeoutInMinutes: 10
+        checkout: none
+        steps:
+        - task: Docker@2
+          inputs:
+            containerResigstry: 'devops-dockerhub-connection'
+            repository: 'dkutti/devopsadotesting'
+            command: 'BuildAndPush'
+            dockerfile: '**/Dockerfile'
+          displayName: ''
+
+      - job: PushImageToECR
+        timeoutInMinutes: 10
+        checkout: none
+        steps:
+        - task: ECRPushImage@1
+          inputs:
+            awsCredentials: 'AWS-ECR'
+            regionName: 'devops-aws-region'
+            imageSource: 'imagename'
+            sourceImageName: 'AWS_ECR_IMAGE_URI'
+            sourceImageTag: $(Build.BuildId)
+            pushTag: $(Build.BuildId)
+            repositoryName: 'AWS_ECI_REPO_NAME'
+          diplayName: ''
+
+
+  - stage: DeleteArtifactRepo
+    - jobs:
+      - job:
+        - steps:
+          - scripts: cd /home/ansible_admin/_work/1/s && rm -rf src
+            scripts: cd /artifacts && rm -rf *.war

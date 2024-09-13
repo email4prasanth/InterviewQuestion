@@ -1,0 +1,30 @@
+---
+- name: PUSH TO GIT
+  hosts: ansible-admin
+  gather_facts: no
+  become: yes
+  become_user: root
+  tasks:
+    - name: RUN APT UPDATE
+      shell: apt update
+    - name: GIT intialization to remote
+      apt: >
+      name= git
+      state= present
+
+---
+- name: Push to GIT
+  become: yes
+  gathering_facts: no
+  user: ansible_admin
+  become_user: root
+  tasks:
+    - name: Run apt update
+      shell: apt update
+    - name: GIT installation to remote
+      apt: >
+        name= git
+        source= present
+
+
+      

@@ -1,0 +1,240 @@
+---
+## Pod creation
+apiVersion:
+kind: pod
+metadata:
+  name:
+  namespace:
+  labels:
+    key_name: value_name
+spec:
+  containers:
+  - name:
+    image:
+    env:
+      - name:
+        value:
+      - name:
+        value:
+### ReplicaSet
+apiVersion:
+kind: ReplicaSet
+metadata:
+  name:
+  namespace: #optional
+  labels:  #optional
+    key_name: value_name
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      key_name: value_name
+  template:
+    metadata:
+      labels:
+        key_name: value_name
+    spec:
+      containers:
+        - name:
+          image:
+          env:
+### Deployment
+apiVersion:
+kind: Deployment
+metadata:
+  name:
+  namespace:
+  labels:
+    key_name: value
+spec:
+  replicas:
+  selector:
+    matchLabels:
+      key_name: value_name
+  stragtegy:
+    rollingupdate:
+      maxSurge:
+      maxUnavailable:
+  template:
+    metadata:
+      labels:
+        key_name: Value_name
+    spec:
+      containers:
+        - name:
+          image:
+          ports:
+          - containerPort:
+          resources:
+            limits:
+              cpu:
+              memory:
+            requests:
+              cpu:
+              memory: 
+### service
+apiVersion:
+kind:
+metadata:
+  name:
+  namespace:
+  labels:
+    key_name: value_name
+spec:
+  ports:
+  - port:
+    protocol:
+    targetport:
+  selector:
+    key_name: value_name
+  type:
+### HPA
+apiVersion:
+kind:
+metadata:
+  name:
+  labels:
+    key_name: value_name
+spec:
+  behaviour:
+    scaleDown:
+      stabilizationWindowSeconds:
+  maxReplicas:
+  minReplicas:
+  scaleTargetRef:
+    apiVersion:
+    kind:
+    metadata:
+      name:
+  metrics:
+  - type: Resource
+    resource:
+      name:
+      target:
+        type:
+        averageUtilization:
+  - type: Resource
+    resource:
+      name:
+      target:
+        type:
+        averageUtilization:
+### ServiceAccount
+---
+apiVersion:
+kind: ServiceAccount
+metadata:
+  name:
+  namespace:
+  labels:
+    k8s_app: metrics-server
+### ClusterRole
+---
+apiVersion:
+kind:
+metadata:
+  name:
+  namespaces:
+  labels:
+    key_name: value_name
+rules:
+  - apiGroups:
+    resources:
+    verbs:
+### RoleBinding
+---
+apiVersion:
+kind: RoleBinding
+metadata:
+  name:
+  namespaces:
+  labels:
+    key_name: value_name
+roleRef:
+  apiGroup:
+  kind: Role
+  name:
+subjects:
+  kind: ServiceAccount
+  name:
+  namespace:
+### ClusterRoleBinding
+apiVersion:
+kind: ClusterRoleBinding
+metadata:
+  name:
+  namespace:
+  labels:
+    key_name: value_name
+roleRef:
+  apiGroup:
+  kind: ClusterRole
+  name:
+subjects:
+  kind: SeviceAccount
+  name:
+  namespace:
+### service
+apiVersion:
+kind: Service
+metadata:
+  name:
+  namespace:
+  labels:
+    key_name: value_name
+spec:
+  ports:
+    - name:
+      port:
+      protocol:
+      targetPort:
+    selector:
+      ks8-app: metrics-server
+### Deployment
+apiVersion:
+kind:
+metadata:
+  name:
+  namespace:
+  label:
+    k8s-app: metrics-server
+spec:
+  replicas:
+  selector:
+    matchLabels:
+      k8s-app: metrics-server
+  strategy:
+    rollingupdate:
+    maxSurge:
+    minSurge:
+  template:
+    metadata:
+      name:
+      mamespace:
+      labels:
+        k8s-app: metircs-server
+    spec:
+     containers:
+      name:
+      image:
+      ports:
+      - containerPort:
+        name:
+        protocol:
+      livenessProbe:
+      readnessProbe:
+      resources:
+        requests:
+          cpu:
+          memory:
+        limits:
+          cpu:
+          memory:
+      volumeMounts:
+      
+    
+
+
+
+
+

@@ -1,0 +1,56 @@
+pipeline{
+    stages{
+        stage{
+            agent {
+                label = "DEV"
+            }
+            environment{
+                DEFAULTAMI = ""
+                PACKERBUILD = ""
+                TERRAFORMPLAN = ""
+                TERRAFORMAPPLY = ""
+                ANSIBLEVALIDATE = " "
+            }
+            when{
+                branch = "development"
+            }
+            stages{
+                stage ("PACKERBUILD"){
+                    when{
+                        expression{
+                            "${env.PACKERBUILD}" = "YES"
+                        }
+                    }
+                    steps{
+                            withAWS(role:"", roleAccount:""){
+                                sh 'echo "pwd"'
+                                sh 'rm -rf prod-backend.json'
+                                sh 'packer plugins github.cmo/hashicorp/aws'
+                                sh 'packer builg packer.json packer-vars.json'
+                            }
+                            
+                    }
+                }
+                stage("TERRAFORMPLAN"){
+                    when{
+                        expression{
+                            "${TERRAFORMPLAN}" = "Yes"
+                        }
+                    }
+                    steps{
+                        echo "TERRAFORMPLAN"
+                        withAWS(role: "", roleAccount: " "){
+                            sh "rm -rf .terraform"
+                            sh "rm -rf prod-backend.tf"
+                            sh "terraform init"
+                            sh "terraform fmt"
+                            sh "terraform validate"
+                            sh "terraform plan"
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

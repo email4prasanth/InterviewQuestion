@@ -1,0 +1,76 @@
+### write a yaml code for getting code from all branches and based on changes write a ci/cd  select the deployment environment on runtime
+trigger:
+  branchs:
+    includes:
+      - '*'
+pool:
+  vmImage: ubuntu-latest
+variables:
+  currentEnvironment: 'Development'
+  branch: '$(Build.SourceBranchName)'
+steps:
+  - task: bash@3
+    displayName:
+    scripts: |
+      if [[ $(Build.SouceBranchName) == "master"]]
+      echo "##vso[[task.setvariable variable=currentEnviroment]]Production"
+      elif [[$(BuildSourceName) == 'stagging']]
+      echo "##vso[[task.setvariable variable='stagging']]Stagging"
+      else
+      echo "##vso[[]]"
+      echo "branch:$(Build.SourceBranchName)"
+  - stage: Buildstage
+    - jobs:
+      - job:
+        displayName: "Build Java code"
+        steps:
+          - script: |
+            $(Build.BuildId)
+            ls -al
+            chmod 700 build.sh && sudo bash ./build.sh
+            mv ROOT.war $ROOT(Build.BuildId).war
+            cp $ROOT(Build.BuildId).war /artifacts
+          - task: PublishBuildArtifacts@2
+            inputs:
+              PublishPath:
+              source:
+              PublishLocation:        
+  - stage: Deploymentstage
+    dependsOn: Buildstage
+    jobs:
+      - job: selectEnvironment
+        displayname: 'select development environment'
+        pool:
+          - vmImage: ubuntu-latest
+        steps:
+          - task: Bash@3
+            displayName:
+            inputs:
+              targetType: inline
+              script: |
+              if [[$(SourceBranchName) == Production]] then
+              echo "Deploy to Production"
+              # steps for production
+              elif [[$(SourceBranchName) == Stagging]] then
+              echo "Deploy to Stagging"
+              # steps for Stagging
+              else
+              echo "Deploy to Development"
+
+  - stage: ApproveToDeployToProduction
+    dependsOn: Buildstage
+    condition: eq(variables['currentEnvironment'], 'Production')
+    - jobs:
+      - job: ManualApproval
+        - steps:
+          - task: ManualValidate@0
+            displayName:
+            inputs:
+              instruction: 'Approve deployment to production'
+              onTimeout: 'reject'
+              timeoutInMinutes:30
+      - job: DeployToProduction
+        dependsOn: ManualApproval
+        steps:
+        
+    
