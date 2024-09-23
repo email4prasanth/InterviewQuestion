@@ -1,0 +1,27 @@
+pipeline{
+    stages{
+        stage{
+            agent{
+                label = "DEV"
+            }
+            environment{}
+            when{
+                branch ="development"                
+            }
+            stages{
+                stage(Build Packer){
+                    when{
+                        expression{
+                            "${}" = "YES"
+                        }
+                    }
+                    steps{
+                        withAWS(role:, roleAccount:)
+                    }
+                }
+                stage(Terrafom Plan){}
+            }
+
+        }
+    }
+}
