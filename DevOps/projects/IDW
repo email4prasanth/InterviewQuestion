@@ -1,5 +1,35 @@
 # Digital Signage Application Workflow
+## Business
+# Digital Signage System  
 
+## 1. Core Components  
+
+### **Admins**  
+- **Super Admin**: Manages all stores/devices.  
+- **Store Admin**: Manages only their store’s devices.  
+
+### **Content & Scheduling**  
+- Upload playlists (**images/videos**).  
+- Schedule display times (**one-time/recurring**).  
+- Group devices for **synchronized content**.  
+
+### **Device Management**  
+- Register, group, and monitor **devices (online/offline)**.  
+
+### **Delivery System**  
+- **SQS**: Queues content for delivery.  
+- **DB**: Stores **schedules, playlists, and device status**.  
+
+---
+
+## 2. Data Flow  
+
+1️⃣ **Admin Input** → Playlist + Schedule stored in **DB**.  
+2️⃣ **Device Pings Server** → Checks for **pending schedules**.  
+3️⃣ **SQS Delivers Content** → When **device is online** (immediate or scheduled).  
+4️⃣ **Group Sync** → Devices in same group **display content simultaneously**.  
+
+## Technical
 ## 1. Frontend Workflow (Node.js/React)
 
 ### Development
