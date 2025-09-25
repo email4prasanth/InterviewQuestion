@@ -1,0 +1,4 @@
+## 01 IDW
+- Implemented CI/CD pipelines for Digital Signage System: Automated build and deployment of a React frontend to AWS S3 + CloudFront, reducing release times by 70% and ensuring global low-latency content delivery. Configured GitHub Actions for seamless integration, cache invalidation, and environment-specific rollouts.
+
+- Deployed scalable Spring Boot microservices on AWS ECS with ALB and RDS: Migrated from manual EC2 deployments to containerized workloads with ECR + ECS, improving deployment reliability by 90% and cutting downtime during releases to <2 minutes. Integrated SQS + WebSocket for real-time, reliable content delivery to 500+ digital signage devices across multiple stores.

@@ -1,12 +1,14 @@
 # Digital Signage Application Workflow
 ## Business
 # Digital Signage System  
+It’s a multi-tenant digital signage platform where admins manage content → backend schedules and queues → TVs fetch/play content via WebSocket + SQS.
+Frontend is React on S3/CloudFront, backend is Spring Boot on EC2 (dev) and ECS (prod), with SQS handling reliable delivery.
 
 ## 1. Core Components  
 
 ### **Admins**  
 - **Super Admin**: Manages all stores/devices.  
-- **Store Admin**: Manages only their store’s devices.  
+- **Store Admin**: Manages only their store’s devices. 
 
 ### **Content & Scheduling**  
 - Upload playlists (**images/videos**).  
@@ -138,7 +140,4 @@
 | **Real-Time**        | WebSocket (Spring), SQS          |
 | **Auth**            | IAM, Spring Security             |
 
----
-
-Let me know if you'd like me to elaborate on any specific part (e.g., detailed deployment steps, security setup)!
 

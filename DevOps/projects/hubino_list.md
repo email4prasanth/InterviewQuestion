@@ -1,0 +1,17 @@
+01_IDW
+02_nexinfo
+03_aivio
+04_amly
+05_Malay-LLM
+06_Platform20
+07_EnterpriseAssist
+08_ammie-leadgencode
+09_allysync-cron
+10_Infogenie
+11_certainti-ai
+12_lumifi
+13_hub-connect
+14_college_connect
+15_Hb-rev
+16_Wistway
+17_convio
