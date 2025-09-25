@@ -1,72 +1,64 @@
-1. Changing the name from Platform 2.0 to Thinkrd365
+# Project Migration and Rename from Platform 2.0 to Thinkrd365
 
-The project was started intially with 3 environment (dev, preprod, prod) with branchs (develop, preprod and main). The project is hosted in azure cloud all the resources are hosted in single directory using Azure intra ID (for internal organisation ). The azure cloud is maintaining by the client side they created an subscription and created a group and gave contributor, Key Vault Administrator and User Access Administrator access. use to raise jira ticket to get the requesting service principle, create Azure ADB2C directories (dev, uat,prod) their DNS records, Add Users to Azure AD Group, Email Accounts Setup.
+## 1. Context and Challenge
+The project was originally named **Platform 2.0**, with 3 environments (dev, preprod, prod) and 3 branches. During the project lifecycle, we faced two major challenges simultaneously:
 
-- mean while team leader proposed an new environment (qa) with branch uat for testing. so created resources in Azure intra ID (for internal organisation ) and Azure ADB2C directories. so totally 4 branchs and 4 environemnts
+- Expanding the testing environment (**QA**).  
+- Full renaming of the project to **Thinkrd365** to align with client’s commercial strategy.
 
-But the name of project is changed from platform 2.0 to thikrd365 inorder to sale the product the client and the technical officer asked to change the naming convenction also we explained 
-Subject: Proposal to Update Domain Name for UAT Environment
-Updating the domain name for our UAT environment from "https://platform20-uat.certainti.ai" to "https://thinkrd365-uat.certainti.ai" (Option A) to align with minimize disruption. Below are the details of the proposed approach and a comparison with an alternative option.
+Both tasks had **high operational risk** and required careful planning to **preserve commit history** and avoid **data loss**.
 
-Option A: Change Domain Name 
-- Action Plan:
-  1. Redeploy Terraform code without modifying existing resources to update the domain name.
-  2. Obtain an SSL certificate for the new URL on the VM side.
-- Benefits:
-  - Preserves all existing resources and data.
-  - Minimal operational impact with straightforward implementation.
+---
+## 2. Technical Complexity
+The complexity of the task included:
+-  The project is hosted in azure cloud all the resources are hosted in single directory using Azure intra ID (for internal organisation ). The azure cloud is maintaining by the client side they created an subscription and created a group and gave contributor, Key Vault Administrator and User Access Administrator access. Use to raise jira ticket to get the requesting service principle, create Azure ADB2C directories (dev, uat,prod) their DNS records, Add Users to Azure AD Group, Email Accounts Setup.
+- **Full rename of Azure resources** (VMs, Key Vaults, SQL servers, APIs, Static Web Apps, VNet, etc.), which carried high risk for **data loss and service disruption**.  
+- **Migration while preserving Git commit history** across multiple branches:  
+  - dev → development  
+  - uat → QA  
+- Integration with **Azure AD B2C directories** for new environments.  
+- Managing **SSL certificates, DNS updates, and Key Vault reconfigurations** for each renamed resource.
 
-Option B: Full Rename from platform20 to thinkrd365
-- Implications:
-  - Renaming resources (e.g., from uat-platform20-rg to uat-thinkrd365-rg) will recreate them, leading to data loss.
-  - Additional tasks include:
-    1. Recreating resources (listed below).
-    2. Recreating B2C credentials.
-    3. Updating Azure Key Vault.
-    4. Obtaining an SSL certificate for the new URL on the VM side.
-- Affected Resources in uat-platform20-rg:
-  - uat-platform20-api-management
-  - uat-platform20-dce
-  - uat-platform20-dcr
-  - uat-platform20-keyvault
-  - uat-platform20-law
-  - uat-platform20-psqlserver-centralus-main
-  - uat-platform20-psqlserver-centralus-org
-  - uat-platform20-staticwebapp
-  - uat-platform20-vm-backend
-  - uat-platform20-vm-backend_OsDisk_1_2ed5d40c4ccb48d7b3fd199725714d90
-  - uat-platform20-vm-etl
-  - uat-platform20-vm-etl_OsDisk_1_b715b564cf204ecd8760969389de2e88
-  - uat-platform20-vm-nic-backend
-  - uat-platform20-vm-nic-etl
-  - uat-platform20-vm-nic-redis
-  - uat-platform20-vm-pub-ip-backend
-  - uat-platform20-vm-pub-ip-etl
-  - uat-platform20-vm-pub-ip-redis
-  - uat-platform20-vm-redis
-  - uat-platform20-vm-redis_OsDisk_1_43cdf78808de492792f5d0a7e631c409
-  - uat-platform20-vm-sg-backend
-  - uat-platform20-vm-sg-etl
-  - uat-platform20-vm-sg-redis
-  - uat-platform20-vnet
-  - uatplatform20registry
-  - uatplatform20stor
+---
+## 3. Client and Team Requirements
+- Followed **client directive** to use full rename despite higher operational risk. 
 - Drawbacks:
   - High risk of data loss and service disruption.
-  - Significant effort required for reconfiguration.
+  - Significant effort required for reconfiguration 
+- Addressed **team leader requirement** to preserve commit history.  
+- Ensured **minimal disruption** to other environments (preprod, prod).
 
-Please let me know if you need further details or wish to discuss the implementation plan.
-but client has choosen option B
-
-Team leader also proposed during migration he need history of commits
-so i proposed 4 branchs and 6 environments
+## 4. Solution Approach
+- **Created a migration plan** with 4 branches and 6 environments to align old and new resources.
 1. develop branch with old environment (dev) and new environment (development)
 2. uat branch with old environment (uat) and new environment (qa)
 3. prepord branch with old environment preprod
-4. main branch with old environment prod
+4. main branch with old environment prod  
+- **Stepwise migration**:  
+  - dev → development  
+  - uat → QA  
+- **Terraform redeployment** to apply renaming without losing existing resources wherever possible.  
+- **Coordinated with client** for Azure AD B2C, SSL, and DNS updates.  
+- **Verified commit history** to maintain code traceability.
 
-so i creafully created and migrated 
-- from dev environment to development environment and
-- form uat environment to qa environment
+---
+## 5. Outcome / Result
+- Successfully migrated all environments with **full rename completed**.  
+- **Preserved commit history** for dev and uat branches.  
+- Met **both client and team leader requirements** with minimal disruption.  
+- Demonstrated ability to **handle complex, multi-stakeholder DevOps projects**.
+
+---
 
 so now i know it is 4 branchs and 4 environement will past commits of dev and uat environments
+
+---
+concise, resume-friendly Markdown version highlighting your DevOps
+### DevOps Engineer | Project: Platform 2.0 → Thinkrd365
+
+- Led **full Azure resource rename and migration** from Platform 2.0 to Thinkrd365, including VMs, Key Vaults, SQL servers, APIs, Static Web Apps, and VNets.  
+- Designed and executed **branch/environment strategy** to preserve Git commit history while creating new environments (development, QA) alongside existing ones (preprod, prod).  
+- Coordinated with client and internal teams for **Azure AD B2C integration, DNS updates, SSL certificates, and Key Vault reconfigurations**.  
+- Implemented migration using **Terraform** to minimize operational risk and avoid data loss.  
+- Successfully balanced **client requirements and team objectives**, ensuring minimal disruption to production systems.  
+- Demonstrated ability to handle **complex, multi-stakeholder DevOps projects** with strategic planning and risk mitigation.
