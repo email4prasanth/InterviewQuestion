@@ -1,83 +1,35 @@
-- I noticed that some of the projects are using serverless architecture. Previous devops engineer created a serverless yml file for one among the service, and team followed the skeleton of the serverless architecture. During development some developers missed purne (serverless-prune-plugin) due to this the new versions are getting created and older versions are remain same because of this the cost for the lambda service is increase as the code limit is 75GB it reached and further extended to 300GB. I noticed and informed the manager and take temparary and permananent step
-- Temparary steps
-- created aws secret key and id using iam role and followed the steps
-### set desired account 
-```sh
-aws configure
-aws lambda list-functions --query 'Functions[*].FunctionName' --output table
-```
-### available versions
-```sh
-$functions = aws lambda list-functions --query 'Functions[*].FunctionName' --output text
-foreach ($fn in $functions.Split("`t")) {
-    Write-Host "=== Versions for $fn ==="
-    aws lambda list-versions-by-function --function-name $fn --query 'Versions[*].[Version,CodeSize,LastModified]' --output table
-}
-```
+# AWS Lambda Version Management & Cost Optimization in Serverless Projects
+As a DevOps engineer, I identified an issue in our serverless projects where Lambda versions were accumulating unnecessarily. The original Serverless framework setup included the **serverless-prune-plugin**, but during development some teams missed enabling it. This led to unpruned Lambda versions, which consumed storage beyond the default **75GB code storage limit**, eventually extending usage to **300GB** and increasing costs.
 
-### Dry run
-```sh
-$functions = aws lambda list-functions --query 'Functions[*].FunctionName' --output text
+### Actions Taken
 
-foreach ($fn in $functions.Split("`t")) {
-    Write-Host "=== Checking versions for $fn ==="
+#### Temporary Fix
 
-    # Get versions sorted by LastModified (exclude $LATEST)
-    $versions = aws lambda list-versions-by-function --function-name $fn `
-        --query 'Versions[?Version!=`$LATEST`].[Version,LastModified]' `
-        --output json | ConvertFrom-Json | Sort-Object { $_[1] } -Descending
+To control storage bloat, I implemented cleanup scripts that:
 
-    if ($versions.Count -gt 4) {
-        # Identify versions to delete but do not delete them
-        $toDelete = $versions | Select-Object -Skip 4
+* Retrieved all Lambda functions.
+* Listed available versions per function.
+* Performed a **dry run** to identify deletable versions while keeping the last 4 versions.
+* Executed cleanup to delete older versions across functions.
 
-        foreach ($ver in $toDelete) {
-            $verNum = $ver[0]
-            Write-Host "Would delete version $verNum of $fn"
-        }
-    } else {
-        Write-Host "No cleanup needed for $fn (versions: $($versions.Count))"
-    }
-}
+This ensured immediate cost savings and storage recovery.
 
-```
-### Clean by leaving last 4 versions
-```sh
-$functions = aws lambda list-functions --query 'Functions[*].FunctionName' --output text
+#### Permanent Fix
 
-foreach ($fn in $functions.Split("`t")) {
-    Write-Host "=== Checking versions for $fn ==="
+I identified the missing **serverless-prune-plugin** in the deployment workflow and reintroduced it into the Serverless YAML configuration. This ensures only a limited number of old versions are retained automatically during deployments, preventing future cost spikes.
 
-    # Get versions sorted by LastModified (exclude $LATEST)
-    $versions = aws lambda list-versions-by-function --function-name $fn `
-        --query 'Versions[?Version!=`$LATEST`].[Version,LastModified]' `
-        --output json | ConvertFrom-Json | Sort-Object { $_[1] } -Descending
+Additionally, I created a monitoring script to:
 
-    if ($versions.Count -gt 4) {
-        # Identify versions to delete but do not delete them
-        $toDelete = $versions | Select-Object -Skip 4
+* Print function names with more than 4 versions.
+* Help the team track functions where pruning isn’t working as expected.
 
-        foreach ($ver in $toDelete) {
-            $verNum = $ver[0]
-            Write-Host "Deleting version $verNum of $fn"
-            aws lambda delete-function --function-name $fn --qualifier $verNum
-        }
-    } else {
-        Write-Host "No cleanup needed for $fn (versions: $($versions.Count))"
-    }
-}
-```
-- Permanent steps identified the missing prune services and implemented. 
-### Just print the function name and its version count (>4).
-```sh
-$functions = aws lambda list-functions --query 'Functions[*].FunctionName' --output text
+### Outcome
 
-foreach ($fn in $functions.Split("`t")) {
-    $versions = aws lambda list-versions-by-function --function-name $fn --query 'Versions[*]' --output json | ConvertFrom-Json
-    $versionCount = $versions.Count
+* Reduced Lambda storage usage by cleaning up stale versions.
+* Automated pruning process with **serverless-prune-plugin** for sustainable cost management.
+* Provided visibility into version counts for proactive monitoring.
 
-    if ($versionCount -gt 4) {
-        Write-Host "=== $fn has $versionCount versions ==="
-    }
-}
-```
+This approach delivered both an immediate fix and a long-term solution, ensuring efficient Lambda lifecycle management and cost optimization.
+
+### Resume
+Optimized AWS Lambda costs by cleaning stale versions with automation scripts and enforcing serverless-prune-plugin, reducing storage bloat and ensuring sustainable serverless lifecycle management
