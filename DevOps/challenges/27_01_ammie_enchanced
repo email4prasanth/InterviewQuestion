@@ -1,0 +1,122 @@
+# Microservices Transformation & CI/CD Implementation on AWS Lightsail (POC Environment)
+
+In the Ammie BRD project, I was tasked with setting up infrastructure using AWS Lightsail, including provisioning a server and configuring a PostgreSQL database. During implementation, I identified significant challenges due to architectural and development gaps.
+
+The backend was initially delivered as a **monolithic Node.js application**, and the developer (from a mobile background) had limited experience with backend concepts such as environment configuration (.env), service separation, and deployment practices.
+
+---
+
+## Challenges Identified
+
+- Monolithic backend not suitable for scalable deployment
+- Lack of environment configuration awareness (.env handling)
+- No CI/CD pipeline or deployment strategy
+- Multiple services (FE, BE, AI, Chat) required to run on a **single VM**
+- Need for service isolation with proper port management
+- Requirement to expose all services under a **single domain via Nginx**
+- Limited infrastructure (POC using AWS Lightsail instead of full AWS stack)
+
+---
+
+## Actions Taken
+
+### Architecture Refactoring
+
+Proposed and guided transition from monolithic architecture to **microservices-based design**, splitting the backend into:
+
+- Core API (4001)
+- Channel Service (4002)
+- Platform Service (4003)
+- AI Engine (5000)
+- Chat Service (6000)
+- Frontend (3000)
+
+Each service was structured as an independent deployable unit.
+
+---
+
+### CI/CD Pipeline Implementation (Bitbucket)
+
+Designed and implemented separate pipelines for each repository:
+
+- Backend services (multi-service pipeline with conditional builds)
+- Frontend (Next.js pipeline)
+- AI service (Python-based pipeline)
+- Chat service
+
+Key features:
+
+- Docker-based builds
+- Push to AWS ECR
+- Conditional deployment using `changesets`
+- Automated cleanup of old images (retain last 5)
+- Parallel build and deployment execution
+- Remote deployment via SSH
+
+---
+
+### Environment Configuration Management
+
+Since developers were unfamiliar with `.env` usage:
+
+- Centralized environment variable management via pipeline
+- Automated `.env` file creation on Lightsail using SSH
+- Maintained separate configs for:
+  - Backend
+  - Frontend
+  - AI service
+  - Chat service
+
+---
+
+### Deployment Strategy (Single VM Architecture)
+
+- Hosted all services on a **single AWS Lightsail instance**
+- Used Docker Compose to orchestrate services
+- Assigned dedicated ports per service
+- Ensured service isolation within the same VM
+
+---
+
+### Reverse Proxy & Routing (Nginx)
+
+Configured Nginx as a reverse proxy to expose all services under a single domain:
+
+- `/` → Frontend
+- `/api/core` → Core API
+- `/api/channel` → Channel Service
+- `/api/platform` → Platform Service
+- `/api/ai` → AI Engine
+- `/api/chat` → Chat Service
+
+Also implemented:
+
+- HTTPS using Certbot (Let's Encrypt)
+- HTTP → HTTPS redirection
+- WebSocket support for real-time services
+
+---
+
+### Infrastructure Optimization
+
+- Used AWS Lightsail for cost-effective POC setup
+- Created custom AMI for quick scaling and replication
+- Enabled horizontal scaling by increasing instance size when needed
+
+---
+
+## Outcome
+
+- Successfully transformed monolithic backend into **microservices architecture**
+- Enabled **independent deployment and scaling of services**
+- Implemented full CI/CD pipelines across multiple repositories
+- Standardized environment configuration despite developer limitations
+- Achieved centralized routing using Nginx under a single domain
+- Delivered a fully functional POC environment with minimal infrastructure cost
+- Improved maintainability, scalability, and deployment reliability
+
+---
+
+## Resume
+
+Designed and implemented microservices architecture on AWS Lightsail by refactoring monolithic backend, building CI/CD pipelines with Docker and ECR, configuring Nginx reverse proxy, and enabling multi-service deployment on a single VM, improving scalability and deployment efficiency
