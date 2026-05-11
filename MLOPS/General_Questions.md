@@ -1,6 +1,4 @@
-# 1. Tell me about yourself
-
-## Answer
+### 1. Tell me about yourself
 
 ```text
 I have around 4.9 years of experience in DevOps and Cloud Engineering,
@@ -20,9 +18,7 @@ model serving, SageMaker, and Kubeflow.
 
 ---
 
-# 2. What is your total experience and relevant experience?
-
-## Answer
+### 2. What is your total experience and relevant experience?
 
 ```text
 I have 4.9 years of total experience in DevOps and Cloud Engineering.
@@ -37,9 +33,7 @@ but currently I am transitioning towards MLOps engineering.
 
 ---
 
-# 3. Have you worked on MLOps projects?
-
-## Answer
+### 3. Have you worked on MLOps projects?
 
 ```text
 Yes.
@@ -62,9 +56,7 @@ to understand the end-to-end ML lifecycle better.
 
 ---
 
-# 4. What frameworks have you used?
-
-## Answer
+### 4. What frameworks have you used?
 
 ```text
 I have mostly worked on the infrastructure and deployment side of MLOps.
@@ -82,9 +74,7 @@ Currently I am learning advanced MLOps platforms like Kubeflow and SageMaker.
 
 ---
 
-# 5. Do you have LLM experience?
-
-## Answer
+### 5. Do you have LLM experience?
 
 ```text
 I do not have production-level enterprise experience in LLM projects yet.
@@ -102,9 +92,7 @@ I am comfortable handling the infrastructure side of AI workloads.
 
 ---
 
-# 6. Why are you moving from DevOps to MLOps?
-
-## Answer
+### 6. Why are you moving from DevOps to MLOps?
 
 ```text
 I was always interested in automation and scalable infrastructure.
@@ -118,9 +106,7 @@ and ML lifecycle management, it felt like a natural transition for me.
 
 ---
 
-# 7. Difference between DevOps and MLOps?
-
-## Answer
+### 7. Difference between DevOps and MLOps?
 
 ```text
 DevOps mainly focuses on application deployment automation,
@@ -141,9 +127,7 @@ we also manage the ML lifecycle.
 
 ---
 
-# 8. What did you exactly do in your MLOps project?
-
-## Answer
+### 8. What did you exactly do in your MLOps project?
 
 ```text
 I worked on setting up the deployment and automation side.
@@ -162,9 +146,7 @@ while I focused more on infrastructure and deployment support.
 
 ---
 
-# 9. Did you train models?
-
-## Answer
+### 9. Did you train models?
 
 ```text
 I have done basic model training in personal learning projects using scikit-learn,
@@ -180,9 +162,7 @@ But professionally my contribution was more towards:
 
 ---
 
-# 10. What is MLflow?
-
-## Answer
+### 10. What is MLflow?
 
 ```text
 MLflow is an open-source MLOps platform used for:
@@ -198,9 +178,7 @@ and manage the ML lifecycle.
 
 ---
 
-# 11. What is Airflow?
-
-## Answer
+### 11. What is Airflow?
 
 ```text
 Apache Airflow is a workflow orchestration tool.
@@ -216,9 +194,7 @@ In MLOps, Airflow can orchestrate:
 
 ---
 
-# 12. What is DVC?
-
-## Answer
+### 12. What is DVC?
 
 ```text
 DVC stands for Data Version Control.
@@ -233,9 +209,7 @@ It works along with Git for managing ML projects.
 
 ---
 
-# 13. Why should we hire you for MLOps if your experience is mainly DevOps?
-
-## Answer
+### 13. Why should we hire you for MLOps if your experience is mainly DevOps?
 
 ```text
 My strong DevOps background is actually helpful for MLOps roles.
