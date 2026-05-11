@@ -1,0 +1,8 @@
+- If there are 3 pipline all have common packages involved, if we want to change only one and should not impact other how will you do it?
+- Python code to find the duplicates
+- Azure databricks, Aws Sagemaker.
+- Github issue faced during production deployment.
+- Data drift is identified?
+- does the github stores the versions??
+- Which is better server or serverless??
+- How you troblue shoot the production issues?

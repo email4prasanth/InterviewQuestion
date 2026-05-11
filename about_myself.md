@@ -1,0 +1,1 @@
+I’m someone who enjoys solving real-world problems through automation and scalable cloud solutions. In my DevOps journey, I’ve focused on improving deployment efficiency, optimizing cloud costs, and enhancing system reliability. I value continuous improvement and believe in strong collaboration and communication within teams to deliver high-quality results.

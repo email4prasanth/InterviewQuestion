@@ -1,0 +1,22 @@
+1.What is Kubernetes, and what problems does it solve in a production system?
+Kubernetes is a container orchestration platform that automates the deployment, scaling, and management of applications.
+In production systems, it solves problems like high availability, auto-scaling based on traffic, efficient resource utilization, load balancing, and self-healing of applications.
+
+2.What is the difference between a container and a Kubernetes pod?
+Docker is a containerized platform with single point of failure, it deals with life cycle of container. Kubernetes pod is a runtime specification of container, it is the basic unit in Kubernetes can declare in yaml file. A worker node containers one or more number of pods, the pod contains one or more number of containers.
+
+3.How does Kubernetes help with high availability for an inference service?
+Running multiple replicas of the service across nodes, automatically restarting failed pods, and distributing traffic using Services.
+
+4.Suppose your model container starts successfully, but prediction requests fail intermittently. What are the first things you would investigate?
+First I check the container is deployed either docker or Kubernetes. I would check if the container or pod is running and review logs to identify errors. Then I’d investigate resource usage, health checks, and scaling to see if the service is under-provisioned
+
+
+5.What is model versioning, and what exactly should be versioned in an ML system?
+Model versioning is the process of tracking different versions of models and related components in an ML system. This includes not just the model itself, but also training data, features, hyperparameters, and code, so that experiments are reproducible and deployments are reliable.
+
+6.How would you design a rollback strategy for a bad model release?
+In my earlier organization, we used version tags for every release. We version all model releases, so if a new model performs poorly, we can roll back to a previous stable version. Using strategies like blue-green deployment, we can switch traffic back instantly without downtime.
+
+7.What are different model deployment strategies
+Common deployment strategies include blue-green deployment for instant rollback, canary deployment for gradual rollout, A/B testing for comparing models
