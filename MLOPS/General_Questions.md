@@ -228,3 +228,19 @@ I already have production experience in these areas.
 Currently I am expanding that expertise into ML systems,
 which makes me capable of supporting scalable AI/ML infrastructure effectively.
 ```
+---
+### 14. What is the reason you left the company?
+```text
+I had a good learning experience in my previous company,
+especially in DevOps, cloud infrastructure, Kubernetes, and CI/CD automation.
+
+Now I am looking for opportunities where I can work on larger-scale projects
+and gain deeper exposure to MLOps and AI infrastructure engineering,
+which aligns with my long-term career goals.
+```
+---
+### 15. Holding any offer ?
+```
+Currently I am in the interview process with a few companies,
+but no offer has been finalized yet.
+```

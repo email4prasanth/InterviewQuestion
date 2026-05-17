@@ -1,0 +1,19 @@
+- git
+- what is feature flag rollout
+- terraform taint
+- git cherrypick
+- difference between pyspark and deep learning
+- what is PV
+- what is ingress and deamonset
+- what is the role of ingress
+- difference between loadbalancer and 
+- replica set and replication container
+- if the on premis is comprimised how to get it from the azure
+- how many types of storages are there in aws, azure
+- what is differnce between stage and bus
+- how do you achieve the disaster recovery
+- terraform state file is corrupt how will you restore
+- did you used promethus as dashbord
+- difference between grafana and promethus
+- what is CRI
+- terraform delarative and imperative
