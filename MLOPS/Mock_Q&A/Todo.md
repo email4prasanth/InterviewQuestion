@@ -1,0 +1,7 @@
+- Azure databricks - https://www.youtube.com/watch?v=5xDP73nX4Mc&list=PL2IsFZBGM_IGiAvVZWAEKX8gg1ItnxEEb&index=3
+- Azure datafactory 
+- pyspark - https://www.youtube.com/watch?v=wNRjR6Cds5s&list=PL2IsFZBGM_IHCl9zhRVC1EXTomkEp_1zm
+- Mlops project using Azure ML - https://www.youtube.com/watch?v=Lpi6d-MgJVI&list=PL_Ke9hJMFeR-i2hkL2YD54klIsMB25las&index=2
+- kubeflow - https://www.youtube.com/watch?v=5iOQcGfcZe4&list=PLdpzxOOAlwvJe__hVS-kN9ltxmny8gIo1&index=5
+- RAG
+- LANGCHAIN - 

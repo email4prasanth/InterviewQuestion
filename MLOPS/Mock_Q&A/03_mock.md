@@ -136,7 +136,7 @@ Orchestration manages the execution flow of ML tasks. Popular tools include Apac
 
 ## Describe how you would structure a CI/CD pipeline for ML.
 
-Include stages: code testing, data validation, model training, evaluation, staging deployment, performance monitoring, and production deployment with approval gates.
+Include stages: code testing(flask8, black, Ruff), data validation, model training, evaluation, staging deployment, performance monitoring, and production deployment with approval gates.
 
 > 🍰 Like a quality control assembly line — each station checks different aspects before the final product!
 

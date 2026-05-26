@@ -1,0 +1,11 @@
+- challenges in production
+- algorithms
+- datadrift & model drift
+- what is the business model of the project that worked on ML
+- How do you find the data drift happend
+- How do you find the model drift happend
+- what are the hyperparameters used
+- how do you retrain the model
+- what is the model used classification or rgression
+- what are the performance metrics used
+- what is the output, how do you calculate and explain end usage w.r.t output
