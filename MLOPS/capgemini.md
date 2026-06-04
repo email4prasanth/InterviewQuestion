@@ -1,0 +1,13 @@
+- what is k-folded
+- does accuracy alone is fine for calculation
+- you worked on classification whate about regeression model
+- Gen AI
+- what is the size fo max_depth of random forest used
+- what happens if you change the max_depth increase or decrease
+- what is MMSE
+- how will you minimize bias and variance
+- how do you manage if you have opinion conflict with team leader
+- what is major challenge that you faced in prod environment
+- Did you worked closely with data engineer how will you help.
+- what type of deployment strategy is used?
+- what about A/B deployment used in your project?

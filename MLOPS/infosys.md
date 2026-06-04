@@ -1,0 +1,12 @@
+- mcp
+- gradient descent algo
+- random walk
+- local and global minima
+- langchain
+- LLM model
+- Gen AI
+- Feature vector
+- how feature engineering is used in deep learning
+- langchain, lang graph
+- cosine similarity, euclidian distance
+- gradient descent

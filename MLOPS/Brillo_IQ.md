@@ -1,3 +1,22 @@
+- Do you worked on production release
+- Did you get a chance to work on auto scale
+- Briefly discribe about the Control and worker node
+- how do you notice the container is not working
+- how do you notice the container is not working
+- is the image creation is your responsibility or developers?
+- what is the recent project you worked on mlops
+- what is the pyspark where it is used
+- what is the contribution did you gave
+- how do you move the working model to production
+- is mlfow is a open source?
+- did you tag manually or automatically
+- what is data drift how did you noticed it
+- you said hyperparameter tunning how do you select?
+- you said only 32 dolars is optimized cost how did you achieved?
+- how do you check the logs?
+- what is the main purpose of kafka
+- Did you created end to end CICD pipeline
+
 - Kubernetes
 - Do you worked on production release
 Yes, I worked on production releases in a microservices-based project called “interaction-chatbot” in the THRD365 project.
@@ -114,6 +133,7 @@ Git commit SHA
 build number
 release version
 
+
 - what is data drift how did you noticed it
 Data drift happens when the incoming production data distribution changes compared to the training data.
 
@@ -127,6 +147,8 @@ checking sudden drops in model performance metrics
 observing abnormal prediction behavior
 
 Monitoring dashboards and validation reports helped us identify such deviations
+
+
 - you said hyperparameter tunning how do you select?
 Hyperparameter tuning is done to improve model performance.
 
@@ -144,8 +166,9 @@ tree depth
 batch size
 
 using techniques like Grid Search or Random Search and selected the configuration that produced the best evaluation score with minimal overfitting.
-- you said only 32 dolars is optimized cost how did you achieved?
-- how do you check the logs?
+
+
+
 We check logs at multiple levels.
 
 Kubernetes level:
